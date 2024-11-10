@@ -3,7 +3,7 @@
 galaxy_info:
   author: SpeakinTelnet
   description: A role to deploy Sonarr using rootless Podman with systemd
-  company: 
+  company: ""
   role_name: sonarr
   namespace: selfhosted
 

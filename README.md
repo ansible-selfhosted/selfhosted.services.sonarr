@@ -7,6 +7,42 @@
 
 <!-- BEGIN_ANSIBLE_DOCS -->
 
-### The readme content is auto-generated with the `hatch run docs:generate` command.
+# Ansible Role: [sonarr](https://wiki.servarr.com/sonarr)
+
+A role to deploy Sonarr using rootless Podman with systemd
+
+## Role Requirements
+
+- none
+
+*Refer to services collection for general requirements*
+
+## Role Arguments
+
+|Option|Description|Type|Required|Default|
+|---|---|---|---|---|
+|sonarr_config_path|The path to the sonarr configuration directory|str|False|~/.config/sonarr/|
+|sonarr_data_path|The path to the sonarr data directory<br>It is recommended to share the same data directory with other media managing services|str|False|~/.local/share/containers/storage/media|
+|sonarr_timezone|The timezone for the sonarr service|str|False|Etc/UTC|
+|sonarr_web_port|The port for the web server|int|False|8989|
+
+
+## Example Playbook
+
+```
+- hosts: all
+  tasks:
+    - name: Importing sonarr role
+      ansible.builtin.import_role:
+        name: selfhosted.services.sonarr
+      vars:
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE)
+
+
+⊂(▀¯▀⊂)
 
 <!-- END_ANSIBLE_DOCS -->
