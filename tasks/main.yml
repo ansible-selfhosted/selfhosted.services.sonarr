@@ -8,12 +8,8 @@
 
 - name: Normalize default paths
   ansible.builtin.set_fact:
-    sonarr_config_path: "{{
-      sonarr_config_path | replace('~', user_info.home)
-      }}"
-    sonarr_data_path: "{{
-      sonarr_data_path | replace('~', user_info.home)
-      }}"
+    sonarr_config_path: "{{ sonarr_config_path | replace('~', user_info.home) }}"
+    sonarr_data_path: "{{ sonarr_data_path | replace('~', user_info.home) }}"
 
 - name: Create directories
   ansible.builtin.file:
@@ -31,10 +27,7 @@
     dest: "{{ item.dest }}"
     mode: "0640"
   loop:
-    - {
-      "src": "sonarr.container.j2",
-      "dest": "{{ user_info.home }}/.config/containers/systemd/sonarr.container",
-    }
+    - { src: sonarr.container.j2, dest: "{{ user_info.home }}/.config/containers/systemd/sonarr.container" }
 
 - name: Start the container service
   ansible.builtin.systemd:
