@@ -28,6 +28,15 @@ argument_specs:
         default: Etc/UTC
         description:
           - The timezone for the sonarr service
+      sonarr_version:
+        type: str
+        required: false
+        default: latest
+        description:
+          - The version of sonarr Container
+        choices:
+          - latest
+          - develop
       sonarr_web_port:
         type: int
         required: false

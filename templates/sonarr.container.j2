@@ -7,7 +7,7 @@ ContainerName=sonarr
 Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ={{ sonarr_timezone }}
-Image=lscr.io/linuxserver/sonarr:latest
+Image=lscr.io/linuxserver/sonarr:{{ sonarr_version }}
 PublishPort={{ sonarr_web_port }}:8989
 Volume={{ sonarr_config_path }}:/config
 Volume={{ sonarr_data_path }}:/data

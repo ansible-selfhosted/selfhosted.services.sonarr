@@ -2,4 +2,5 @@
 sonarr_config_path: ~/.config/sonarr/
 sonarr_data_path: ~/.local/share/containers/storage/media
 sonarr_timezone: Etc/UTC
+sonarr_version: latest
 sonarr_web_port: 8989

@@ -3,7 +3,12 @@ role_name_check: 1
 driver:
   name: podman
 platforms:
-  - name: instance
+  - name: sonarr_latest
+    image: quay.io/speakintelnet/pinp-molecule
+    privileged: true
+    pre_build_image: true
+    systemd: true
+  - name: sonarr_develop
     image: quay.io/speakintelnet/pinp-molecule
     privileged: true
     pre_build_image: true
@@ -12,7 +17,11 @@ provisioner:
   name: ansible
   inventory:
     host_vars:
-      instance:
+      sonarr_latest:
         ansible_user: podman
+        sonarr_version: latest
+      sonarr_develop:
+        ansible_user: podman
+        sonarr_version: develop
 verifier:
   name: ansible
