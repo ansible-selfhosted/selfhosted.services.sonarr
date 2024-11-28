@@ -24,7 +24,7 @@ A role to deploy Sonarr using rootless Podman with systemd
 |sonarr_config_path|The path to the sonarr configuration directory|str|False|~/.config/sonarr/|
 |sonarr_data_path|The path to the sonarr data directory<br>It is recommended to share the same data directory with other media managing services|str|False|~/.local/share/containers/storage/media|
 |sonarr_timezone|The timezone for the sonarr service|str|False|Etc/UTC|
-|sonarr_version|The version of sonarr Container|str|False|latest|- latest<br>- develop
+|sonarr_version|The version of sonarr Container|str|False|latest|<ul><li>latest</li><li>develop</li></ul>
 |sonarr_web_port|The port for the web server|int|False|8989|
 
 
