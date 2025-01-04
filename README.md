@@ -21,8 +21,13 @@ A role to deploy Sonarr using rootless Podman with systemd
 
 |Option|Description|Type|Required|Default|choices|
 |---|---|---|---|---|---|
+|sonarr_additional_options|List of additional key=value for the quadlet container<br>ex: - "Network=custom.network"<br>Can also be used to leave comments by preceding with a '#'|list|False|[]|
+|sonarr_config_label|The labels for to the sonarr config directory<br>Comma separated values (ex: rw,Z)|str|False||
 |sonarr_config_path|The path to the sonarr configuration directory|str|False|~/.config/sonarr/|
+|sonarr_data_label|The labels for to the sonarr data directory<br>Comma separated values (ex: rw,Z)|str|False||
 |sonarr_data_path|The path to the sonarr data directory<br>It is recommended to share the same data directory with other media managing services|str|False|~/.local/share/containers/storage/media|
+|sonarr_puid|The user id to run the inside the sonarr container|int|False|1000|
+|sonarr_pgid|The group id to run the inside the sonarr container|int|False|1000|
 |sonarr_timezone|The timezone for the sonarr service|str|False|Etc/UTC|
 |sonarr_version|The version of sonarr Container|str|False|latest|<ul><li>latest</li><li>develop</li></ul>
 |sonarr_web_port|The port for the web server|int|False|8989|

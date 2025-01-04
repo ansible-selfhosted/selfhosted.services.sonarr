@@ -4,13 +4,18 @@ Description=An internet PVR for Usenet and Torrents.
 [Container]
 AutoUpdate=registry
 ContainerName=sonarr
-Environment=PUID=1000
-Environment=PGID=1000
+Environment=PUID={{ sonarr_puid }}
+Environment=PGID={{ sonarr_pgid }}
 Environment=TZ={{ sonarr_timezone }}
 Image=lscr.io/linuxserver/sonarr:{{ sonarr_version }}
 PublishPort={{ sonarr_web_port }}:8989
-Volume={{ sonarr_config_path }}:/config:Z
-Volume={{ sonarr_data_path }}:/data:z
+Volume={{ sonarr_config_path }}:/config{% if sonarr_config_label|length > 0 %}:{{ sonarr_config_label }}{% endif %}
+
+Volume={{ sonarr_data_path }}:/data{% if sonarr_data_label|length > 0 %}:{{ sonarr_data_label }}{% endif %}
+
+{% for sonarr_var in sonarr_additional_options %}
+{{ sonarr_var }}
+{% endfor %}
 
 [Service]
 Restart=always

@@ -1,6 +1,11 @@
 ---
+sonarr_additional_options: []
+sonarr_config_label: ''
 sonarr_config_path: ~/.config/sonarr/
+sonarr_data_label: ''
 sonarr_data_path: ~/.local/share/containers/storage/media
+sonarr_puid: 1000
+sonarr_pgid: 1000
 sonarr_timezone: Etc/UTC
 sonarr_version: latest
 sonarr_web_port: 8989
